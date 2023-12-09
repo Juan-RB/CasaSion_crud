@@ -1,0 +1,95 @@
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
+
+
+body{
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-image: linear-gradient(#380036, #0CBABA);
+    
+}
+
+
+h2{
+    font-size: 40px;
+    text-align: center;
+    margin: 10px;
+    font-family: 'Bebas Neue', cursive;
+    color: #fefefe;
+}
+p{
+    font-size: 20px;
+    text-align: center;
+    margin: 10px;
+    font-family: 'Bebas Neue', cursive;
+    color: #fefefe;
+}
+
+/* .container {
+    max-width:650px ;
+    padding: 28px;
+    margin: 0 28px;
+    border-radius: 10px;
+    overflow: hidden;
+    background: rgba(0,0,0,0.2);
+    box-shadow: 0 12px 20px rgba(0,0,0,0.6) ;
+} */
+
+.cardForm{
+    max-width:650px ;
+    padding: 28px;
+    margin: 0 28px;
+    border-radius: 10px;
+    overflow: hidden;
+    background: rgba(0,0,0,0.2);
+    box-shadow: 0 12px 20px rgba(0,0,0,0.6) ;
+}
+
+#devolverseButton{
+    position: absolute;
+    bottom: 20px;
+    left: 20px;
+    margin: 10px;
+    font-family: 'Bebas Neue', cursive;
+    color: #fefefe;
+}
+
+#agregarButton, #modificarButton {
+    display: block;
+    margin: 0 auto; /* Centra el botón horizontalmente */
+    padding: 15px 110px; /* Ajusta el relleno para hacer el botón más largo */
+    font-size: 24px; /* Tamaño de fuente ajustado */
+    font-family: 'Bebas Neue', cursive;
+    color: #fefefe;
+    background-color: #380036; /* Cambia el color de fondo si es necesario */
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+#botonAgregarP{
+    display: block;
+    margin: 0 auto; /* Centra el botón horizontalmente */
+    padding: 15px 110px; /* Ajusta el relleno para hacer el botón más largo */
+    font-size: 24px; /* Tamaño de fuente ajustado */
+    font-family: 'Bebas Neue', cursive;
+    color: #fefefe;
+    background-color: #380036; /* Cambia el color de fondo si es necesario */
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+#filtrarBotton{
+    display: block;
+    margin: 0 auto; /* Centra el botón horizontalmente */
+    padding: 15px 110px; /* Ajusta el relleno para hacer el botón más largo */
+    font-size: 24px; /* Tamaño de fuente ajustado */
+    font-family: 'Bebas Neue', cursive;
+    color: #fefefe;
+    background-color: #0CBABA; /* Cambia el color de fondo si es necesario */
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}

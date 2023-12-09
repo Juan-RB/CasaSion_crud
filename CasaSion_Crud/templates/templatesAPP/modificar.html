@@ -1,0 +1,52 @@
+
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <!-- bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <!-- css propio -->
+    <link rel="stylesheet" href="{% static 'css/styles.css' %}" type="text/css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Evaluacion 3 CRUD</title>
+</head>
+<body>
+   
+
+    <div class="container">
+        <div class="row"  id="Agregar_trabajadores">
+            <div class="col-3"></div>
+            <div class="col-6"><!-- aqui empieza  -->
+                <div class="cardForm">
+                    <h2>
+                        Modificar Usuarios CRUD  
+                    </h2>
+                    <div class="form-card-s">
+                        <form  method="post">
+                            {% csrf_token %} 
+                            {{  form.as_p }}
+                            <button id="modificarButton" class="btn btn-success">Modificar</button>
+                        </form>
+                        
+                    </div>
+                </div>
+                
+            </div>  
+            <div class="col-3"></div>           <!-- aqui termina -->           
+        </div>
+    </div>
+
+    <a id="devolverseButton" href='{% url "listar" %}' class="btn btn-dark">
+        <p>Devolverse</p>
+    </a>
+
+    </div>
+    <br><br>
+
+
+
+</body>
+</html>
+

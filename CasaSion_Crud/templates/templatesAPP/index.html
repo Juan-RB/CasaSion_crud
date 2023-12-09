@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <!-- bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <!-- css propio -->
+    <link rel="stylesheet" href="{% static 'css/styles.css' %}" type="text/css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Evaluacion 3 CRUD</title>
+</head>
+<body>
+   
+
+    <div class="constainer">
+        <div class="row"  id="Agregar_trabajadores">
+            <div class="col-1"></div>
+            <div class="col-10"><!-- aqui empieza  -->
+                <h2 id="Visualizar">Espacio de visualización de Trabajadores</h2>
+
+                <form method="get" action="{% url 'listar' %}">
+                    {{ form.codCA }} <br>
+                    {{ form.nombre }} <br>
+                    <button id="filtrarBotton"  type="submit" class="btn btn-primary">Filtrar</button>
+                </form><br>
+                
+
+                <a id='botonAgregarP' href= "{% url 'agregar' %}" class="btn btn-primary">Agregar</a><br>
+
+                <table id="boostrapdatatable" class="table table-striped table-bordered table-dark" width="100%" style="text-align: center;">
+
+                    <thead>
+                        <tr>
+                            <th>ID</th>
+                            <th>Nombre</th>
+                            <th>Apellido</th>
+                            <th>RUT</th>
+                            <th>Email</th>
+                            <th>Dirección</th>
+                            <th>Comuna</th>
+                            <th>Fecha Nacimiento</th>
+                            <th>Numero</th>
+                            <th>Casa Avivamiento</th>
+                            <th >Acciones</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {% for usuario in listar_usuario %}
+                        <tr>
+                            
+                            <td>{{ usuario.id }}</td>
+                            <td>{{ usuario.nombre }}</td>
+                            <td>{{ usuario.apellido }}</td>
+                            <td>{{ usuario.rut }}</td>
+                            <td>{{ usuario.email }}</td>
+                            <td>{{ usuario.direccion }}</td>
+                            <td>{{ usuario.comuna }}</td>
+                            <td>{{ usuario.fecha }}</td>
+                            <td>{{ usuario.numero }}</td>
+                            <td>{{ usuario.codCA }}</td>
+                            
+                            
+                            <td>
+                                <div class="btn-group" role="group" aria-label="Basic example">
+                                    <a class="btn btn-success" data-toggle="modal" href="/modificar/{{ usuario.id }}">Modificar</a>
+                                    <a href="{% url 'eliminar' usuario.id %}" class="btn btn-danger" onclick="return confirm('¿Estas seguro de que deseas eliminar este usuario?')">Eliminar</a>
+                                </div>          
+                            </td>
+                        </tr>
+                        {% endfor %}
+                    </tbody>
+                        
+                </table><br><br>
+            </div>  
+            <div class="col-1"></div>           <!-- aqui termina -->           
+        </div>
+        <div class="row">
+            <div class="col-4"></div>
+            <div class="col-4">
+
+                <div class="alert alert-primary" role="alert" style="text-align: center;">
+                    <strong>Este CRUD va dirigido para la Casa Sión, iglesia a la que asisto. <br>
+                            El propósito a demás de ser una evaluación, es darle una funcionalidad y <br>
+                            Para facilitar el registro de personas nuevas que ingresan a la iglesia<br>
+                    </strong>
+                </div>
+
+            </div>
+            
+
+            <div class="col-4"></div>
+        </div>
+
+    </div>
+    <br>
+    <a id="devolverseButton" href='{% url "listar" %}' class="btn btn-dark">
+        <p>Limpiar filtros</p>
+    </a>
+    <br>
+
+    
+    
+
+
+</body>
+</html>
+
